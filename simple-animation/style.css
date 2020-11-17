@@ -1,5 +1,6 @@
-.div{
-    height: 100px;
-    width: 100px;
-    background-color: darkcyan;
+.body{
+    background-color: oldlace;
+    display: flex;
+    width: auto;
+    height:100% ;
 }
