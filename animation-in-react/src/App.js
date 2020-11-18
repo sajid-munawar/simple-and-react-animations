@@ -3,13 +3,13 @@ import useWebAnimations from "@wellyshen/use-web-animations";
 import './App.css';
 
 function App() {
-  const { ref, playState } = useWebAnimations({
+  const { ref, playState,getAnimation } = useWebAnimations({
     keyframes: {
       transform: ["translateX(500px)"], // Move by 500px
       background: ["red", "blue", "green"], // Go through three colors
     },
     timing: {
-      delay: 500, // Start with a 500ms delay
+      // delay: 500, // Start with a 500ms delay
       duration: 1000, // Run for 1000ms
       iterations: Infinity, // Repeat once
       direction: "alternate", // Run the animation forwards and then backwards
@@ -29,8 +29,13 @@ function App() {
 
 
 
-  return (
-    <div className="div">Hello World..!   </div>
+  return (<div>
+
+    <div className="div" ref={ref}>Hello World..! 
+   </div>
+  {playState} <div><button onClick={()=> getAnimation().pause()}>Pause</button></div>
+   <div><button onClick={()=> getAnimation().play()}>Play</button></div>
+  </div>
   );
 }
 
